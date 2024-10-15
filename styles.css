@@ -1,0 +1,155 @@
+/* Global Styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #1e1e1e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #00bcd4; /* Light blue accent */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Dashboard Section */
+#dashboard {
+    padding: 60px 30px;
+    background-color: #222;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dashboard-container h2 {
+    color: #00bcd4;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.dashboard-card h3 {
+    color: #00bcd4;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-card ul li {
+    margin: 10px 0;
+    color: #ccc;
+}
+
+.dashboard-card ul li a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.dashboard-card ul li a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-card p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.dashboard-card p a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.dashboard-card p a:hover {
+    text-decoration: underline;
+}
+
+/* Button Style */
+.expand-btn {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.expand-btn:hover {
+    background-color: #008ba3;
+}
+
+/* Content Sections */
+.content {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Pop-in Animation */
+.pop-in {
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform

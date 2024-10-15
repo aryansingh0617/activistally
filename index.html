@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activist Ally - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places" async defer></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <h1>Activist Ally</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#volunteer-registration">Volunteer Registration</a></li>
+                <li><a href="#event-creation">Create Event</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+        <div class="dashboard-container">
+            <h2>Dashboard</h2>
+            
+            <div class="dashboard-grid">
+                <!-- Latest Events -->
+                <div class="dashboard-card">
+                    <h3>Latest Events</h3>
+                    <button class="expand-btn" id="latest-events-btn">Show Latest Events</button>
+                    <div class="content" id="latest-events-content">
+                        <ul>
+                            <li>Beach Cleanup - 12/11/2024</li>
+                            <li>Tree Planting - 14/11/2024</li>
+                            <li>Community Garden - 16/11/2024</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Past Events -->
+                <div class="dashboard-card">
+                    <h3>Past Events</h3>
+                    <button class="expand-btn" id="past-events-btn">Show Past Events</button>
+                    <div class="content" id="past-events-content">
+                        <ul>
+                            <li>March for Climate - 30/10/2024</li>
+                            <li>Food Drive - 25/10/2024</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Chats -->
+                <div class="dashboard-card">
+                    <h3>Chats</h3>
+                    <button class="expand-btn" id="chats-btn">Join Chat</button>
+                    <div class="content" id="chats-content">
+                        <ul>
+                            <li><a href="#">Join Climate Action Chat</a></li>
+                            <li><a href="#">Join Beach Cleanup Chat</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Expected Earnings -->
+                <div class="dashboard-card">
+                    <h3>Expected Earnings</h3>
+                    <button class="expand-btn" id="earnings-btn">Show Expected Earnings</button>
+                    <div class="content" id="earnings-content">
+                        <p>$500 (for upcoming events)</p>
+                    </div>
+                </div>
+
+                <!-- Support -->
+                <div class="dashboard-card">
+                    <h3>Support</h3>
+                    <button class="expand-btn" id="support-btn">Get Support</button>
+                    <div class="content" id="support-content">
+                        <p>If you have any questions, <a href="mailto:support@activistally.org">contact support</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Activist Ally. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:info@activistally.org">info@activistally.org</a></p>
+    </footer>
+
+    <!-- JavaScript for Interactive Dashboard and Popping Effect -->
+    <script>
+        // Function to toggle visibility and add pop-in effect
+        function toggleContent(btnId, contentId) {
+            const btn = document.getElementById(btnId);
+            const content = document.getElementById(contentId);
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                btn.innerText = btn.innerText.replace("Hide", "Show");
+            } else {
+                content.style.display = "block";
+                content.classList.add('pop-in');  // Add the pop-in effect
+                btn.innerText = btn.innerText.replace("Show", "Hide");
+            }
+        }
+
+        // Adding event listeners to buttons
+        document.getElementById("latest-events-btn").addEventListener("click", function() {
+            toggleContent("latest-events-btn", "latest-events-content");
+        });
+
+        document.getElementById("past-events-btn").addEventListener("click", function() {
+            toggleContent("past-events-btn", "past-events-content");
+        });
+
+        document.getElementById("chats-btn").addEventListener("click", function() {
+            toggleContent("chats-btn", "chats-content");
+        });
+
+        document.getElementById("earnings-btn").addEventListener("click", function() {
+            toggleContent("earnings-btn", "earnings-content");
+        });
+
+        document.getElementById("support-btn").addEventListener("click", function() {
+            toggleContent("support-btn", "support-content");
+        });
+    </script>
+
+</body>
+</html>
